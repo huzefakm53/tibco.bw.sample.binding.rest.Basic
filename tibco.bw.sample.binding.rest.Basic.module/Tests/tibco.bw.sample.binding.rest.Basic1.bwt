@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/tibco.bw.sample.binding.rest.Basic/Tests/tibco.bw.sample.binding.rest.Basic1.bwt">
+  <ProcessNode Id="tibco.bw.sample.binding.rest.basic.books" Name="tibco.bw.sample.binding.rest.basic.books" ModelType="BW" moduleName="tibco.bw.sample.binding.rest.Basic"/>
+</emulation:EmulationData>

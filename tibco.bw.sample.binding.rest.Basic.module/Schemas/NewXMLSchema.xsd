@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/NewXMLSchema" elementFormDefault="qualified" targetNamespace="http://www.example.org/NewXMLSchema">
+
+    <complexType name="NewComplexType">
+    	<sequence>
+    		<element name="ReplyMsg" type="string"/>
+    		<element name="Boolean_Element" type="boolean"/>
+    		<element name="Double_Element" type="double"/>
+    		<element name="Float_Element" type="float"/>
+    		<element name="Int_Element" type="int"/>
+        </sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jmscustom8d8edb17-b459-4ec6-a203-e46e47396464" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jmscustom8d8edb17-b459-4ec6-a203-e46e47396464">
+  <xsd:complexType name="Body" tibex:source="bw.jms.requestreply">
+    <xsd:sequence>
+      <xsd:element name="replyMsg" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/tibco.bw.sample.binding.rest.Basic/Tests/tibco.bw.sample.binding.rest.Basic3.bwt">
+  <ProcessNode Id="tibco.bw.sample.binding.rest.basic.SP_FileLoad" Name="tibco.bw.sample.binding.rest.basic.SP_FileLoad" ModelType="BW" moduleName="tibco.bw.sample.binding.rest.Basic">
+    <Assertion Id="cafdca6c-40c3-4342-8f39-735800c0317c" Name="End" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1611896800893&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$End-input/tns:primitive='GOLD'&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1611896800893&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template name=&quot;&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;string>&lt;testInput>&lt;xsl:value-of select=&quot;$End-input/tns:primitive&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;&amp;quot;GOLD&amp;quot;&quot;/>&lt;/goldInput>&lt;/string>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="tibco.bw.sample.binding.rest.basic.SP_FileLoad">
+      <Inputs Id="e0050ef0-da45-497e-b1c4-f998feeccf0ftibco.bw.sample.binding.rest.Basic_tibco.bw.sample.binding.rest.basic.SP_FileLoad_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS">
+        <informations Name="input" nameSpace="http://www.example.com/namespaces/tns/1611896800893">
+          <nameSpaces prefix="tns" nameSapce="http://www.example.com/namespaces/tns/1611896800893"/>
+          <Parameter Name="tns:Element">
+            <parameters Name="tns:FileName" Value="TEST.txt" type="string" nameSpace="http://www.example.com/namespaces/tns/1611896800893"/>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:Element xmlns:tns='http://www.example.com/namespaces/tns/1611896800893' >&lt;tns:FileName>TEST.txt&lt;/tns:FileName>&lt;/tns:Element>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>

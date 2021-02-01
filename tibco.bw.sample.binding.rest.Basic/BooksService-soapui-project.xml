@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c39ea9c9-74e8-4884-82bd-0839ee21b618" activeEnvironment="Default" name="BooksService_gen1" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="85a524ac-5c3a-45b9-961f-59df8116ce8f" wsaVersion="NONE" name="SOAPServiceBinding" type="wsdl" bindingName="{http://www.example.com/interface/books/GetBooksImpl}SOAPServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/hmisri/Desktop/BooksService_gen1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\hmisri\Desktop\BooksService_gen1.wsdl"><con:part><con:url>file:\C:\Users\hmisri\Desktop\BooksService_gen1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="GetBooksByAuthor" targetNamespace="http://www.example.com/interface/books/GetBooksImpl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.com/interface/books/GetBooksImpl" xmlns:tns0="http://www.example.com/xsd/books" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.com/xsd/books" xmlns:ns0="http://www.example.com/xsd/books">
+      <xsd:complexType name="BookStoreType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" ref="ns0:Book"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BookType">
+        <xsd:sequence>
+          <xsd:element ref="ns0:Title"/>
+          <xsd:element ref="ns0:Author"/>
+          <xsd:element ref="ns0:Date"/>
+          <xsd:element ref="ns0:ISBN"/>
+          <xsd:element ref="ns0:Publisher"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ISBNType">
+        <xsd:simpleContent>
+          <xsd:extension base="xsd:string"/>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="TitleType">
+        <xsd:simpleContent>
+          <xsd:extension base="xsd:string"/>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:element name="Author" type="xsd:string"/>
+      <xsd:element name="Book" type="ns0:BookType"/>
+      <xsd:element name="BookStore" type="ns0:BookStoreType"/>
+      <xsd:element name="Date" type="xsd:string"/>
+      <xsd:element name="ISBN" type="ns0:ISBNType"/>
+      <xsd:element name="Publisher" type="xsd:string"/>
+      <xsd:element name="Title" type="ns0:TitleType"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBooksByAuthor">
+    <wsdl:part element="tns0:Author" name="author"/>
+  </wsdl:message>
+  <wsdl:message name="GetBooksOut">
+    <wsdl:part element="tns0:BookStore" name="message"/>
+  </wsdl:message>
+  <wsdl:portType name="GetBooksByAuthor">
+    <wsdl:operation name="GetBooks">
+      <wsdl:input message="tns:GetBooksByAuthor"/>
+      <wsdl:output message="tns:GetBooksOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="tns:GetBooksByAuthor">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBooks">
+      <soap:operation soapAction="GetBooks" style="document"/>
+      <wsdl:input>
+        <soap:body parts="author" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="message" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetBooksByAuthor">
+    <wsdl:port binding="tns:SOAPServiceBinding" name="GetBooksByAuthorSOAP">
+      <soap:address location="http://localhost:8076/SOAPServiceBinding/getBooksByAuthor/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8076/SOAPServiceBinding/getBooksByAuthor/</con:endpoint></con:endpoints><con:operation id="e3cb27d4-78ac-48f6-b38b-11cd622d6793" isOneWay="false" action="GetBooks" name="GetBooks" bindingOperationName="GetBooks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bf03ab76-eead-4673-9a67-edd894d32b13" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8076/SOAPServiceBinding/getBooksByAuthor/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:book="http://www.example.com/xsd/books">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <book:Author>111</book:Author>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetBooks"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="4cdf900e-f5d7-42a1-b828-bc238c14fa7f" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="bda79c14-c31e-40fd-9caa-27034199cb63" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="0b420cf6-88f8-4dfe-ad33-2fba557b45b8" name="GetBooks - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPServiceBinding</con:interface><con:operation>GetBooks</con:operation><con:request name="GetBooks - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="b1191f05-7a6c-46a9-b6df-bba3a517682c"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8076/SOAPServiceBinding/getBooksByAuthor/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:book="http://www.example.com/xsd/books">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <book:Author>111</book:Author>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="52cb494e-91aa-4810-ac7b-37c70001f24b" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" id="ad73f695-aa21-461f-8f04-22a75ef4ac4f" name="Not SOAP Fault"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetBooks"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
