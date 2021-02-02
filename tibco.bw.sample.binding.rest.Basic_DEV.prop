@@ -1,0 +1,8 @@
+agentHost=localhost
+domain=dummy
+agentPort=8079
+appSpace=test_as
+appNode=test_an
+httpPort=8088
+osgiPort=8089
+profile=DEV
